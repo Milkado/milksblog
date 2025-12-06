@@ -1,6 +1,7 @@
 ---
-import { SITE_TITLE } from '../consts';
+import { SITE_TITLE } from '../../consts';
 import HeaderLink from './HeaderLink.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 const { currentLocale } = Astro;
 ---
 
@@ -8,9 +9,9 @@ const { currentLocale } = Astro;
 	<nav>
 		<h2><a href="/">{SITE_TITLE}</a></h2>
 		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
+			<HeaderLink href={getRelativeLocaleUrl("pt-br", "/")}>Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/projects">Projects</HeaderLink>
+			<HeaderLink href="/projects">Projetos</HeaderLink>
 		</div>
 		<div class="locale-links">
 			<a href="/" class:list={{ active: currentLocale === 'en' }}>EN</a>

@@ -1,0 +1,23 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<ul>
+				<li><a href="https://lospec.com/palette-list" target="_blank">Lospec</a> - a very good database for pixel arts</li>
+				<li><a href="https://www.aseprite.org/" target="_blank">Aseprite</a> - software to make pixel art and animation focused on games </li>
+			<ul>
+		</main>
+		<Footer />
+	</body>
+</html>

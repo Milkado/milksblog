@@ -1,0 +1,52 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/pt-br/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const today = new Date();
+const birthDate = new Date('1996-12-31'); // Assuming birth date is December 31, 1996
+
+let age = today.getFullYear() - birthDate.getFullYear();
+const monthDifference = today.getMonth() - birthDate.getMonth();
+if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+	age--
+}
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Milk's Coppermind</h1>
+			<p>
+				Olá! Me chamo Lucas, mas sou mais conhecido como Milk! Sou um engenheiro de software de {age} anos, frustrado e percebendo que perdido.
+				Gosto de codar, mas também gosto de contar histórias e criar mundos.
+			</p>
+			<p>
+				Então decedi aprender desenvolvimento de jogos. Parece uma boa decisão, unir meus 7 anos de experiência em desenvolvimento, com minha paixão de criar mundos. O que me levou a criar esse simples blog para compartilhar minha jornada, que me dará um empurrão, mesmo que ninguém lei.
+			</p>
+			<p>
+				Quero que cada post seja uma leitura de 5 a 10 minutos, de aprender o básico até a completa arte. Espero compartilhar essa experiência do melhor jeito que puder.
+			</p>
+
+			<h5>Extras ou coisas para facilitar acesso</h5>
+			<ul>
+				<!--<li>Edit this page in <code>src/pages/index.astro</code></li>
+				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
+				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
+				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
+<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>-->
+
+				<li><a href="">/links</a> - lista de links úteis que usei nessa jornada</li>
+				<li><a href="">/historias</a> - o que escrevi ou estou escrevendo</li>
+			</ul>
+		</main>
+		<Footer />
+	</body>
+</html>
