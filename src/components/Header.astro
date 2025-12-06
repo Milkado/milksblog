@@ -8,14 +8,14 @@ const { currentLocale } = Astro;
 	<nav>
 		<h2><a href="/">{SITE_TITLE}</a></h2>
 		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/projects">Projects</HeaderLink>
+			<HeaderLink href="/milksblog/">Home</HeaderLink>
+			<HeaderLink href="/milksblog/blog">Blog</HeaderLink>
+			<HeaderLink href="/milksblog/projects">Projects</HeaderLink>
 		</div>
 		<div class="locale-links">
-			<a href="/" class:list={{ active: currentLocale === 'en' }}>EN</a>
+			<a href="/milksblog/" class:list={{ active: currentLocale === 'en' }}>EN</a>
 			<span aria-hidden="true">|</span>
-			<a href="/pt-br/" class:list={{ active: currentLocale === 'pt-br' }}>PT-BR</a>
+			<a href="/milksblog/pt-br/" class:list={{ active: currentLocale === 'pt-br' }}>PT-BR</a>
 		</div>
 	</nav>
 </header>

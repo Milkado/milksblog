@@ -13,4 +13,5 @@ export default defineConfig({
 		routing: "manual"
   	},
 	site: 'https://Milkado.github.io',
+	base: 'milksblog'
 });
