@@ -1,6 +1,9 @@
 ---
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
+import flag1 from '../assets/flag1.svg?raw';
+import flag2 from '../assets/falg2.svg?raw';
+
 const { currentLocale } = Astro;
 ---
 
@@ -13,9 +16,13 @@ const { currentLocale } = Astro;
 			<HeaderLink href="/milksblog/projects">Projects</HeaderLink>
 		</div>
 		<div class="locale-links">
-			<a href="/milksblog/" class:list={{ active: currentLocale === 'en' }}>EN</a>
+			<a href="/milksblog/" class:list={{ active: currentLocale === 'en' }}>
+				<Fragment set:html={flag2} />
+			</a>
 			<span aria-hidden="true">|</span>
-			<a href="/milksblog/pt-br/" class:list={{ active: currentLocale === 'pt-br' }}>PT-BR</a>
+			<a href="/milksblog/pt-br/" class:list={{ active: currentLocale === 'pt-br' }}>
+				<Fragment set:html={flag1} />
+			</a>
 		</div>
 	</nav>
 </header>
@@ -63,6 +70,11 @@ const { currentLocale } = Astro;
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
+	}
+	.locale-links a svg {
+		width: 32px;
+		height: auto;
+		display: block;
 	}
 	@media (max-width: 720px) {
 		.social-links {
