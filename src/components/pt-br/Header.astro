@@ -3,6 +3,8 @@ import { SITE_TITLE } from '../../consts';
 import HeaderLink from './HeaderLink.astro';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 const { currentLocale } = Astro;
+import flag1 from '../../assets/flag1.svg?raw';
+import flag2 from '../../assets/falg2.svg?raw';
 ---
 
 <header>
@@ -14,9 +16,13 @@ const { currentLocale } = Astro;
 			<HeaderLink href="/milksblog/projects">Projetos</HeaderLink>
 		</div>
 		<div class="locale-links">
-			<a href="/milksblog/" class:list={{ active: currentLocale === 'en' }}>EN</a>
+			<a href="/milksblog/" class:list={{ active: currentLocale === 'en' }}>
+				<Fragment set:html={flag2} />
+			</a>
 			<span aria-hidden="true">|</span>
-			<a href="/milksblog/pt-br/" class:list={{ active: currentLocale === 'pt-br' }}>PT-BR</a>
+			<a href="/milksblog/pt-br/" class:list={{ active: currentLocale === 'pt-br' }}>
+				<Fragment set:html={flag1} />
+			</a>
 		</div>
 	</nav>
 </header>
