@@ -6,6 +6,9 @@ import Footer from '../../../components/pt-br/Footer.astro';
 import FormattedDate from '../../../components/pt-br/FormattedDate.astro';
 import Header from '../../../components/pt-br/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const { currentLocale } = Astro;
 
 const posts = (await getCollection('blogbr')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -94,7 +97,7 @@ const posts = (await getCollection('blogbr')).sort(
 					{
 						posts.map((post) => (
 							<li>
-								<a href={`/milksblog/pt-br/blog/${post.id}/`}>
+						<a href={getRelativeLocaleUrl("pt-br", `blog/${post.id}`)}>
 									{post.data.heroImage && (
 										<Image width={720} height={360} src={post.data.heroImage} alt="" />
 									)}
